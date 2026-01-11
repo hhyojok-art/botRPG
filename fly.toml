@@ -1,0 +1,7 @@
+app = "botRPG"
+
+[env]
+PYTHONUNBUFFERED = "1"
+
+# For a Discord bot (background worker) we don't expose HTTP ports here.
+# Replace `app` value or set `FLY_APP_NAME` secret in GitHub Actions.
