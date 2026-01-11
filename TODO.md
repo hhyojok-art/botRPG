@@ -1,0 +1,3 @@
+- [x] Add Flask to requirements.txt
+- [x] Modify main.py to include Flask web server for Replit
+- [x] Create .replit file for deployment

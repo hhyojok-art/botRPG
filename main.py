@@ -9,6 +9,7 @@ from database import get_prefix_db
 import io
 from PIL import Image, ImageDraw, ImageFont
 from utils.fonts import load_font
+from flask import Flask
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
@@ -189,6 +190,15 @@ except Exception:
     pass
 
 # ======================
+# FLASK WEB SERVER FOR REPLIT
+# ======================
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return {'status': 'Bot is running'}
+
+# ======================
 # AUTO LOAD COGS
 # ======================
 async def load_cogs():
@@ -201,4 +211,10 @@ async def main():
         await load_cogs()
         await bot.start(TOKEN)
 
-asyncio.run(main())
+if os.environ.get('PORT'):
+    # For Replit, run Flask on the provided port
+    port = int(os.environ.get('PORT'))
+    app.run(host='0.0.0.0', port=port)
+else:
+    # For local development, run the bot
+    asyncio.run(main())

@@ -486,3 +486,14 @@ UnboundLocalError: cannot access local variable 'os' where it is not associated 
 2026-01-11 18:08:57,195 | INFO | Shard ID None has connected to Gateway (Session ID: 6654de32ce389071b16cc2d3ffce36b9).
 2026-01-11 18:08:59,214 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
 2026-01-11 18:10:56,596 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 19:15:59,693 | INFO | logging in using static token
+2026-01-11 19:16:01,290 | INFO | Shard ID None has connected to Gateway (Session ID: 2693872b8a162a1d8eadfcaa6ab21749).
+2026-01-11 19:16:03,297 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-12 06:23:54,006 | INFO | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.18.80:5000
+2026-01-12 06:23:54,007 | INFO | [33mPress CTRL+C to quit[0m
+2026-01-12 06:25:55,681 | INFO | logging in using static token
+2026-01-12 06:25:57,877 | INFO | Shard ID None has connected to Gateway (Session ID: 43699b8d0d6f34f7387eb0974c0255a8).
+2026-01-12 06:25:59,924 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
