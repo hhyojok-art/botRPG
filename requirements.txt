@@ -1,0 +1,8 @@
+discord.py>=2.3.0
+python-dotenv
+fastapi
+uvicorn
+redis
+aiohttp
+Pillow
+itsdangerous>=2.1.2

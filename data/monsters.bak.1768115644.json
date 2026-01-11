@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Abyss Tyrant",
+    "hp": 100,
+      {"name": "Abyss Tyrant", "hp": 100, "atk": 18, "def": 9, "xp": 100, "gold": 55},
+      {"name": "Abyss Walker", "hp": 100, "atk": 18, "def": 8, "xp": 88, "gold": 50},
+      {"name": "Ancient Devourer", "hp": 100, "atk": 18, "def": 9, "xp": 100, "gold": 50},
+    "gold": 55
+  },
+  {
+    "name": "Abyss Walker",
+    "hp": 100,
+      {"name": "Hellspawn", "hp": 100, "atk": 20, "def": 9, "xp": 93, "gold": 47},
+    "def": 8,
+    "xp": 88,
+    "gold": 50
+  },
+  {
+      {"name": "Nightfiend", "hp": 100, "atk": 20, "def": 8, "xp": 92, "gold": 46},
+    "hp": 100,
+    "atk": 18,
+    "def": 9,
+    "xp": 100,
+      {"name": "SlimeBoss", "hp": 100, "atk": 17, "def": 8, "xp": 100, "gold": 60},
+  },
+  {
+    "name": "Blight Beetle",
+    "hp": 90,
+      {"name": "Soul Eater", "hp": 100, "atk": 19, "def": 9, "xp": 94, "gold": 50},
+    "def": 6,
+      {"name": "Toxic Pudding", "hp": 100, "atk": 17, "def": 7, "xp": 86, "gold": 39},
+    "gold": 30
+      {"name": "Venomite", "hp": 100, "atk": 18, "def": 7, "xp": 88, "gold": 40},
+  {
+    "name": "Bloom Slime",
+    "hp": 70,
+    "atk": 12,
+    "def": 4,
+    "xp": 50,
+    "gold": 20
+  },
+  {
+    "name": "Doomcap",
+    "hp": 110,
+    "atk": 20,
+    "def": 8,
+    "xp": 90,
+    "gold": 40
+  },
+  {
+    "name": "Frostbit",
+    "hp": 95,
+    "atk": 18,
+    "def": 7,
+    "xp": 80,
+    "gold": 35
+  },
+  {
+    "name": "Glowcap",
+    "hp": 60,
+    "atk": 10,
+    "def": 4,
+    "xp": 40,
+    "gold": 18
+  },
+  {
+    "name": "Hellspawn",
+    "hp": 100,
+    "atk": 20,
+    "def": 9,
+    "xp": 93,
+    "gold": 47
+  },
+  {
+    "name": "Icon27",
+    "hp": 50,
+    "atk": 8,
+    "def": 3,
+    "xp": 30,
+    "gold": 10
+  },
+  {
+    "name": "Icon33",
+    "hp": 50,
+    "atk": 8,
+    "def": 3,
+    "xp": 30,
+    "gold": 10
+  },
+  {
+    "name": "kumb",
+    "hp": 40,
+    "atk": 7,
+    "def": 2,
+    "xp": 25,
+    "gold": 10
+  },
+  {
+    "name": "Mossy Blob",
+    "hp": 80,
+    "atk": 14,
+    "def": 5,
+    "xp": 60,
+    "gold": 25
+  },
+  {
+    "name": "Mushory",
+    "hp": 75,
+    "atk": 13,
+    "def": 5,
+    "xp": 55,
+    "gold": 22
+  },
+  {
+    "name": "Nightfiend",
+    "hp": 100,
+    "atk": 20,
+    "def": 8,
+    "xp": 92,
+    "gold": 46
+  },
+  {
+    "name": "Plasy",
+    "hp": 55,
+    "atk": 9,
+    "def": 3,
+    "xp": 35,
+    "gold": 12
+  },
+  {
+    "name": "Rotbug",
+    "hp": 85,
+    "atk": 15,
+    "def": 6,
+    "xp": 70,
+    "gold": 28
+  },
+  {
+    "name": "Rotshroom",
+    "hp": 100,
+    "atk": 18,
+    "def": 7,
+    "xp": 85,
+    "gold": 35
+  },
+  {
+    "name": "Slime",
+    "hp": 40,
+    "atk": 8,
+    "def": 3,
+    "xp": 25,
+    "gold": 10
+  },
+  {
+    "name": "SlimeBoss",
+    "hp": 100,
+    "atk": 17,
+    "def": 8,
+    "xp": 100,
+    "gold": 60
+  },
+  {
+    "name": "Slimecore",
+    "hp": 120,
+    "atk": 22,
+    "def": 9,
+    "xp": 110,
+    "gold": 50
+  },
+  {
+    "name": "SlimeHani",
+    "hp": 95,
+    "atk": 17,
+    "def": 7,
+    "xp": 80,
+    "gold": 35
+  },
+  {
+ 8   "name": "Sludgeling",
+    "hp": 70,
+    "atk": 13,
+    "def": 5,
+    "xp": 55,
+    "gold": 22
+  },
+  {
+    "name": "Snary",
+    "hp": 105,
+    "atk": 19,
+    "def": 8,
+    "xp": 90,
+    "gold": 40
+  },
+  {
+    "name": "Soul Eater",
+    "hp": 100,
+    "atk": 19,
+    "def": 9,
+    "xp": 94,
+    "gold": 50
+  },
+  {
+    "name": "Sprout Slime",
+    "hp": 50,
+    "atk": 9,
+    "def": 3,
+    "xp": 30,
+    "gold": 12
+  },
+  {
+    "name": "Toxic Pudding",
+    "hp": 100,
+    "atk": 17,
+    "def": 7,
+    "xp": 86,
+    "gold": 39
+  },
+  {
+    "name": "Venogoo",
+    "hp": 110,
+    "atk": 20,
+    "def": 8,
+    "xp": 95,
+    "gold": 45
+  },
+  {
+    "name": "Venomite",
+    "hp": 100,
+    "atk": 6,
+    "def": 7,
+    "xp": 88,
+    "gold": 40
+  },
+  {
+    "name": "Void Imp",
+    "hp": 85,
+    "atk": 5,
+    "def": 6,
+    "xp": 70,
+    "gold": 30
+  }
+]

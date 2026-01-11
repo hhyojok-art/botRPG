@@ -1,0 +1,488 @@
+2026-01-11 04:50:26,361 | INFO | logging in using static token
+2026-01-11 04:50:27,922 | INFO | Shard ID None has connected to Gateway (Session ID: 796cfd7323fe98d80dac10e90e5865f5).
+2026-01-11 05:11:16,124 | INFO | logging in using static token
+2026-01-11 05:11:18,059 | INFO | Shard ID None has connected to Gateway (Session ID: 4abdf41d136363bd9defb5616891dc26).
+2026-01-11 05:11:20,072 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:11:34,892 | ERROR | Unhandled command error
+NoneType: None
+2026-01-11 05:31:46,337 | INFO | logging in using static token
+2026-01-11 05:31:48,049 | INFO | Shard ID None has connected to Gateway (Session ID: 05746f3a4386b79b4664ee7ced435eba).
+2026-01-11 05:31:50,051 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:32:06,691 | ERROR | Unhandled command error
+NoneType: None
+2026-01-11 05:33:47,251 | INFO | logging in using static token
+2026-01-11 05:33:48,818 | INFO | Shard ID None has connected to Gateway (Session ID: 7f177af622343d61074b10bab31e0e10).
+2026-01-11 05:33:50,861 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:33:52,417 | ERROR | Unhandled command error: HTTPException('400 Bad Request (error code: 50035): Invalid Form Body\nIn components.1.components.0.options: This field is required')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\public.py", line 168, in list
+    await ctx.reply(embed=pages[0], view=view)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\context.py", line 779, in reply
+    return await self.send(content, reference=self.message, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\context.py", line 1102, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\http.py", line 773, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In components.1.components.0.options: This field is required
+2026-01-11 05:34:10,853 | ERROR | Ignoring exception in on_message
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 855, in connect_check_health
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\retry.py", line 116, in call_with_retry
+    return do()
+           ^^^^
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 856, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 1306, in _connect
+    raise err
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 1290, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\client.py", line 504, in _run_event
+    await coro(*args, **kwargs)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1421, in on_message
+    await self.process_commands(message)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1418, in process_commands
+    await self.invoke(ctx)  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1376, in invoke
+    await ctx.command.invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1056, in invoke
+    await self.prepare(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 960, in prepare
+    if not await self.can_run(ctx):
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\hybrid.py", line 554, in can_run
+    return await super().can_run(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1307, in can_run
+    if not await ctx.bot.can_run(ctx):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 501, in can_run
+    return await discord.utils.async_all(f(ctx) for f in data)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\utils.py", line 719, in async_all
+    elem = await elem
+           ^^^^^^^^^^
+  File "D:\dit\Bot\main.py", line 49, in maintenance_check
+    return await is_bot_enabled()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\redis_client.py", line 12, in is_bot_enabled
+    enabled = await loop.run_in_executor(None, r.get, 'bot_enabled')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\commands\core.py", line 1923, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\client.py", line 657, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\client.py", line 663, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\utils.py", line 196, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 2603, in get_connection
+    connection.connect()
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 846, in connect
+    self.connect_check_health(check_health=True)
+  File "D:\dit\Lib\site-packages\redis\connection.py", line 863, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. No connection could be made because the target machine actively refused it.
+2026-01-11 05:34:51,650 | INFO | logging in using static token
+2026-01-11 05:34:53,185 | INFO | Shard ID None has connected to Gateway (Session ID: 3514923020b5b1bf32dedece24cc8a87).
+2026-01-11 05:34:55,198 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:35:01,577 | ERROR | Unhandled command error: HTTPException('400 Bad Request (error code: 50035): Invalid Form Body\nIn components.1.components.0.options: This field is required')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\public.py", line 168, in list
+    await ctx.reply(embed=pages[0], view=view)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\context.py", line 779, in reply
+    return await self.send(content, reference=self.message, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\context.py", line 1102, in send
+    return await super().send(
+           ^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\abc.py", line 1703, in send
+    data = await state.http.send_message(channel.id, params=params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\http.py", line 773, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In components.1.components.0.options: This field is required
+2026-01-11 05:37:21,837 | INFO | logging in using static token
+2026-01-11 05:37:23,391 | INFO | Shard ID None has connected to Gateway (Session ID: 1dc5583fd5f44e3292860efe7d9edac6).
+2026-01-11 05:37:25,400 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:37:33,661 | ERROR | Ignoring exception in view <HelpView timeout=120 children=4> for item <Button style=<ButtonStyle.secondary: 2> url=None disabled=False label='Next \u25b6' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ui\view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+  File "D:\dit\Bot\cogs\public.py", line 60, in next
+    await interaction.response.edit_message(embed=self.pages[self.index], view=self)
+          ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Button' object has no attribute 'response'
+2026-01-11 05:37:51,643 | ERROR | Ignoring exception in view <HelpView timeout=120 children=4> for item <Button style=<ButtonStyle.danger: 4> url=None disabled=False label='Close' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ui\view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+  File "D:\dit\Bot\cogs\public.py", line 64, in close
+    await interaction.message.delete()
+          ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Button' object has no attribute 'message'
+2026-01-11 05:39:19,162 | INFO | logging in using static token
+2026-01-11 05:39:22,171 | INFO | Shard ID None has connected to Gateway (Session ID: aff69f8e7a69b808cb777d984c87f2f7).
+2026-01-11 05:39:24,181 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:39:26,609 | ERROR | Ignoring exception in view <HelpView timeout=120 children=4> for item <Button style=<ButtonStyle.secondary: 2> url=None disabled=False label='Next \u25b6' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ui\view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ui\view.py", line 219, in __call__
+    return self.callback(self.view, interaction, self.item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HelpView.next() takes 2 positional arguments but 3 were given
+2026-01-11 05:39:52,999 | ERROR | Ignoring exception in view <HelpView timeout=120 children=4> for item <Button style=<ButtonStyle.secondary: 2> url=None disabled=False label='Next \u25b6' emoji=None row=None sku_id=None id=None>
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ui\view.py", line 555, in _scheduled_task
+    await item.callback(interaction)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ui\view.py", line 219, in __call__
+    return self.callback(self.view, interaction, self.item)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HelpView.next() takes 2 positional arguments but 3 were given
+2026-01-11 05:40:53,330 | INFO | logging in using static token
+2026-01-11 05:40:55,089 | INFO | Shard ID None has connected to Gateway (Session ID: 276d7bc2eb0b4fac82d914423414a1b0).
+2026-01-11 05:40:57,097 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:46:31,195 | INFO | logging in using static token
+2026-01-11 05:46:32,874 | INFO | Shard ID None has connected to Gateway (Session ID: b557a424a687d8fa4296d236589c28f9).
+2026-01-11 05:46:34,887 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:49:50,639 | INFO | logging in using static token
+2026-01-11 05:49:52,341 | INFO | Shard ID None has connected to Gateway (Session ID: 49b5508e0c0bc01eda3a413288af792d).
+2026-01-11 05:49:54,358 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 05:50:30,844 | ERROR | Unhandled command error: CommandNotFound('Command "rpg" is not found')
+discord.ext.commands.errors.CommandNotFound: Command "rpg" is not found
+2026-01-11 05:51:31,542 | ERROR | Unhandled command error: MissingRequiredArgument('price is a required argument that is missing.')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1376, in invoke
+    await ctx.command.invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1056, in invoke
+    await self.prepare(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 973, in prepare
+    await self._parse_arguments(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\hybrid.py", line 559, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 880, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 732, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: price is a required argument that is missing.
+2026-01-11 06:17:59,927 | INFO | logging in using static token
+2026-01-11 06:18:01,410 | INFO | Shard ID None has connected to Gateway (Session ID: 7c4f38d6a9ca12bab446f978ee937d5b).
+2026-01-11 06:18:03,428 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:19:58,897 | ERROR | Unhandled command error: MissingRequiredArgument('price is a required argument that is missing.')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1376, in invoke
+    await ctx.command.invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1056, in invoke
+    await self.prepare(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 973, in prepare
+    await self._parse_arguments(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\hybrid.py", line 559, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 880, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 732, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: price is a required argument that is missing.
+2026-01-11 06:20:17,698 | ERROR | Unhandled command error: NameError("name 'add_shop_item' is not defined")
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\owner.py", line 183, in shopseed
+    add_shop_item(ctx.guild.id, name, price, desc)
+    ^^^^^^^^^^^^^
+NameError: name 'add_shop_item' is not defined
+2026-01-11 06:20:24,907 | ERROR | Unhandled command error: CommandNotFound('Command "List" is not found')
+discord.ext.commands.errors.CommandNotFound: Command "List" is not found
+2026-01-11 06:20:54,411 | ERROR | Unhandled command error: NameError("name 'add_shop_item' is not defined")
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\owner.py", line 183, in shopseed
+    add_shop_item(ctx.guild.id, name, price, desc)
+    ^^^^^^^^^^^^^
+NameError: name 'add_shop_item' is not defined
+2026-01-11 06:29:58,962 | INFO | logging in using static token
+2026-01-11 06:30:00,486 | INFO | Shard ID None has connected to Gateway (Session ID: 617ed03a2901a8404dd85160ffa7cbb1).
+2026-01-11 06:30:02,518 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:31:36,689 | ERROR | Unhandled command error: OperationalError('table shop_items has no column named slot')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\economy.py", line 160, in shopadd
+    add_shop_item(ctx.guild.id, item_name, price, description)
+  File "D:\dit\Bot\database.py", line 179, in add_shop_item
+    cursor.execute(
+sqlite3.OperationalError: table shop_items has no column named slot
+2026-01-11 06:31:48,311 | ERROR | Unhandled command error: MissingRequiredArgument('item_name is a required argument that is missing.')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1376, in invoke
+    await ctx.command.invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1056, in invoke
+    await self.prepare(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 973, in prepare
+    await self._parse_arguments(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\hybrid.py", line 559, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 880, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 732, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: item_name is a required argument that is missing.
+2026-01-11 06:31:55,966 | ERROR | Unhandled command error: OperationalError('table shop_items has no column named slot')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\owner.py", line 185, in shopseed
+    add_shop_item(ctx.guild.id, name, price, desc)
+  File "D:\dit\Bot\database.py", line 179, in add_shop_item
+    cursor.execute(
+sqlite3.OperationalError: table shop_items has no column named slot
+2026-01-11 06:35:02,728 | INFO | logging in using static token
+2026-01-11 06:35:04,687 | INFO | Shard ID None has connected to Gateway (Session ID: 3f09705f5782e1d30557107b6453748e).
+2026-01-11 06:35:06,699 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:35:18,297 | ERROR | Unhandled command error: OperationalError('table shop_items has no column named slot')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\economy.py", line 44, in shop
+    add_shop_item(ctx.guild.id, name, price, desc, atk, defn, slot)
+  File "D:\dit\Bot\database.py", line 179, in add_shop_item
+    cursor.execute(
+sqlite3.OperationalError: table shop_items has no column named slot
+2026-01-11 06:36:19,715 | ERROR | Unhandled command error: OperationalError('table shop_items has no column named slot')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\economy.py", line 44, in shop
+    add_shop_item(ctx.guild.id, name, price, desc, atk, defn, slot)
+  File "D:\dit\Bot\database.py", line 179, in add_shop_item
+sqlite3.OperationalError: table shop_items has no column named slot
+2026-01-11 06:36:39,536 | INFO | logging in using static token
+2026-01-11 06:36:41,424 | INFO | Shard ID None has connected to Gateway (Session ID: f4a76b63faa810800aed53ad3f2205d1).
+2026-01-11 06:36:43,441 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:41:13,507 | INFO | logging in using static token
+2026-01-11 06:41:15,305 | INFO | Shard ID None has connected to Gateway (Session ID: febfd768471eb8b5fca1940c18fe253b).
+2026-01-11 06:41:17,309 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:43:20,556 | INFO | logging in using static token
+2026-01-11 06:43:22,893 | INFO | Shard ID None has connected to Gateway (Session ID: 5dc95678a1b4706234988f4e5ef17a4b).
+2026-01-11 06:43:24,906 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:46:26,002 | INFO | logging in using static token
+2026-01-11 06:46:27,605 | INFO | Shard ID None has connected to Gateway (Session ID: dc759555f8f1f82af828a1b1c5798fdb).
+2026-01-11 06:46:29,624 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 06:47:42,846 | ERROR | Unhandled command error: CommandNotFound('Command "rogstats" is not found')
+discord.ext.commands.errors.CommandNotFound: Command "rogstats" is not found
+2026-01-11 06:59:07,061 | INFO | logging in using static token
+2026-01-11 06:59:08,721 | INFO | Shard ID None has connected to Gateway (Session ID: 583c0c33d9ca2b0cce4bcc3461002a58).
+2026-01-11 06:59:10,746 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:00:31,542 | INFO | logging in using static token
+2026-01-11 11:00:33,014 | INFO | Shard ID None has connected to Gateway (Session ID: 6457c349ba2e2a22e1ce7dc65c13f341).
+2026-01-11 11:00:35,038 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:05:50,794 | INFO | logging in using static token
+2026-01-11 11:05:52,402 | INFO | Shard ID None has connected to Gateway (Session ID: 407f6cc8dc113c263a18886f707270c2).
+2026-01-11 11:05:54,412 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:08:36,184 | INFO | logging in using static token
+2026-01-11 11:08:37,749 | INFO | Shard ID None has connected to Gateway (Session ID: c2201fb7af29d3a4ae808951de477ae7).
+2026-01-11 11:08:39,755 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:11:55,880 | INFO | logging in using static token
+2026-01-11 11:11:58,507 | INFO | Shard ID None has connected to Gateway (Session ID: a34ae194801868575394e60929120f19).
+2026-01-11 11:12:00,547 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:13:10,222 | ERROR | Unhandled command error: CommandNotFound('Command "use" is not found')
+discord.ext.commands.errors.CommandNotFound: Command "use" is not found
+2026-01-11 11:15:36,536 | INFO | logging in using static token
+2026-01-11 11:15:38,065 | INFO | Shard ID None has connected to Gateway (Session ID: eeb4f5010063efea0f36bf3347c31e2a).
+2026-01-11 11:15:40,107 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:24:27,859 | INFO | logging in using static token
+2026-01-11 11:24:29,570 | INFO | Shard ID None has connected to Gateway (Session ID: 8678c252f544259e3defc8ba764874a4).
+2026-01-11 11:24:31,585 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:30:22,029 | INFO | logging in using static token
+2026-01-11 11:30:23,596 | INFO | Shard ID None has connected to Gateway (Session ID: 64c8a5419d434c57a32c2b9aa5a739ab).
+2026-01-11 11:30:25,611 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 11:50:34,486 | INFO | logging in using static token
+2026-01-11 11:50:37,381 | INFO | Shard ID None has connected to Gateway (Session ID: d97112828d9ad0265cdb25c265cf4146).
+2026-01-11 11:50:39,400 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 12:42:11,027 | INFO | logging in using static token
+2026-01-11 12:42:12,496 | INFO | Shard ID None has connected to Gateway (Session ID: 84e2dd5b90c59f70d99c26600ce1ee29).
+2026-01-11 12:42:14,512 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 13:34:32,118 | INFO | logging in using static token
+2026-01-11 13:34:33,592 | INFO | Shard ID None has connected to Gateway (Session ID: 4b18f2532d4340448d8dcece1782236f).
+2026-01-11 13:34:35,603 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:18:29,039 | INFO | logging in using static token
+2026-01-11 14:18:30,630 | INFO | Shard ID None has connected to Gateway (Session ID: 9acb4fdcf9c367ec3bec2ea04e9eaa6b).
+2026-01-11 14:18:32,646 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:25:08,724 | INFO | logging in using static token
+2026-01-11 14:25:10,631 | INFO | Shard ID None has connected to Gateway (Session ID: 3d45a8894a51f4573e8b0cc51791eb03).
+2026-01-11 14:25:12,640 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:33:48,326 | INFO | logging in using static token
+2026-01-11 14:33:49,808 | INFO | Shard ID None has connected to Gateway (Session ID: 62311570b132a4ae1f24fd30c5015a4b).
+2026-01-11 14:33:51,823 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:37:23,126 | INFO | logging in using static token
+2026-01-11 14:37:24,583 | INFO | Shard ID None has connected to Gateway (Session ID: 0d246e5b27259fc9d03e5fd2c1a9ea0b).
+2026-01-11 14:37:26,588 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:43:46,750 | INFO | logging in using static token
+2026-01-11 14:43:48,263 | INFO | Shard ID None has connected to Gateway (Session ID: 68abd0765ca3e4cfc39f53004ea334e9).
+2026-01-11 14:43:50,290 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:47:57,555 | INFO | logging in using static token
+2026-01-11 14:47:59,415 | INFO | Shard ID None has connected to Gateway (Session ID: 88803711b85fa1a20f23ba4523252aaa).
+2026-01-11 14:48:01,416 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 14:57:46,690 | INFO | logging in using static token
+2026-01-11 14:57:48,478 | INFO | Shard ID None has connected to Gateway (Session ID: 925df513b462fb4327dcdbc26a7783fa).
+2026-01-11 14:57:50,489 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:03:33,330 | INFO | logging in using static token
+2026-01-11 15:03:34,918 | INFO | Shard ID None has connected to Gateway (Session ID: c465c29c8eda824352c9faec350455ed).
+2026-01-11 15:03:36,924 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:11:37,423 | INFO | logging in using static token
+2026-01-11 15:11:39,121 | INFO | Shard ID None has connected to Gateway (Session ID: c4f0d76e17bd2f591af11fa21217016f).
+2026-01-11 15:11:41,126 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:14:49,869 | INFO | logging in using static token
+2026-01-11 15:14:51,791 | INFO | Shard ID None has connected to Gateway (Session ID: c906ff70def8ab2955dbcbd91582f213).
+2026-01-11 15:14:53,795 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:18:50,547 | INFO | logging in using static token
+2026-01-11 15:18:52,043 | INFO | Shard ID None has connected to Gateway (Session ID: ce03c581f2098aa656abf04663770bd9).
+2026-01-11 15:18:54,055 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:26:31,903 | INFO | logging in using static token
+2026-01-11 15:26:33,452 | INFO | Shard ID None has connected to Gateway (Session ID: 722b7e6987147e200de5c64d60c87e3e).
+2026-01-11 15:26:35,468 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:35:05,402 | INFO | logging in using static token
+2026-01-11 15:35:07,040 | INFO | Shard ID None has connected to Gateway (Session ID: 6cea59c60a778845c42aeb9cf0dd14df).
+2026-01-11 15:35:09,069 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 15:35:36,320 | INFO | Updated maintenance image at D:\dit\Bot\Assets\background\maintenance.png
+2026-01-11 16:19:28,047 | INFO | logging in using static token
+2026-01-11 16:19:29,686 | INFO | Shard ID None has connected to Gateway (Session ID: 411e73708103d54c998a4576a66d5da6).
+2026-01-11 16:19:31,702 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 16:34:19,947 | INFO | logging in using static token
+2026-01-11 16:34:21,671 | INFO | Shard ID None has connected to Gateway (Session ID: 2ae9eae712d3eb46134b2b2caead809a).
+2026-01-11 16:34:23,690 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 16:38:54,759 | INFO | logging in using static token
+2026-01-11 16:38:56,545 | INFO | Shard ID None has connected to Gateway (Session ID: 6f12c5df5dafc9e5d3f98e8993d1309b).
+2026-01-11 16:38:58,556 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 16:40:50,646 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 16:41:33,184 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 16:41:36,865 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 16:57:39,552 | INFO | logging in using static token
+2026-01-11 16:57:41,274 | INFO | Shard ID None has connected to Gateway (Session ID: d8cffdcacc1a9aa9c58dc475910da317).
+2026-01-11 16:57:43,277 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 17:00:05,859 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 17:00:19,144 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 17:22:50,321 | INFO | logging in using static token
+2026-01-11 17:22:52,047 | INFO | Shard ID None has connected to Gateway (Session ID: 0015b47619ece6d14dabc88d946871ba).
+2026-01-11 17:22:54,064 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 17:23:27,848 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 17:28:05,314 | INFO | logging in using static token
+2026-01-11 17:28:06,948 | INFO | Shard ID None has connected to Gateway (Session ID: 08ee694a38d2139ea3eeeccdee097014).
+2026-01-11 17:28:08,958 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 17:31:14,786 | ERROR | Unhandled command error: MissingRequiredArgument('action is a required argument that is missing.')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1376, in invoke
+    await ctx.command.invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1056, in invoke
+    await self.prepare(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 973, in prepare
+    await self._parse_arguments(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\hybrid.py", line 559, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 880, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 732, in transform
+    raise MissingRequiredArgument(param)
+discord.ext.commands.errors.MissingRequiredArgument: action is a required argument that is missing.
+2026-01-11 17:31:40,672 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 17:31:50,348 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 17:31:55,391 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
+2026-01-11 17:34:38,239 | INFO | logging in using static token
+2026-01-11 17:34:39,982 | INFO | Shard ID None has connected to Gateway (Session ID: f4378ccd08e501ac53a698f814cc2b61).
+2026-01-11 17:34:41,996 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 17:43:16,002 | INFO | logging in using static token
+2026-01-11 17:43:17,645 | INFO | Shard ID None has connected to Gateway (Session ID: 2cb496568bfc552950039f3941a667ea).
+2026-01-11 17:43:19,669 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 17:44:42,585 | ERROR | Unhandled command error: MemberNotFound('Member "list" not found.')
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\bot.py", line 1376, in invoke
+    await ctx.command.invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1685, in invoke
+    await super().invoke(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 1056, in invoke
+    await self.prepare(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 973, in prepare
+    await self._parse_arguments(ctx)
+  File "D:\dit\Lib\site-packages\discord\ext\commands\hybrid.py", line 729, in _parse_arguments
+    return await super()._parse_arguments(ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 880, in _parse_arguments
+    transformed = await self.transform(ctx, param, attachments)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 750, in transform
+    return await run_converters(ctx, converter, argument, param)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\converter.py", line 1442, in run_converters
+    return await _actual_conversion(ctx, converter, argument, param)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\converter.py", line 1326, in _actual_conversion
+    return await converter().convert(ctx, argument)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Lib\site-packages\discord\ext\commands\converter.py", line 281, in convert
+    raise MemberNotFound(argument)
+discord.ext.commands.errors.MemberNotFound: Member "list" not found.
+2026-01-11 17:50:13,736 | INFO | logging in using static token
+2026-01-11 17:50:15,367 | INFO | Shard ID None has connected to Gateway (Session ID: a42b50cb736370f0d4dbcb5dd07b9555).
+2026-01-11 17:50:17,381 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 17:51:17,889 | ERROR | Unhandled command error: UnboundLocalError("cannot access local variable 'os' where it is not associated with a value")
+Traceback (most recent call last):
+  File "D:\dit\Lib\site-packages\discord\ext\commands\core.py", line 266, in wrapped
+    ret = await coro(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dit\Bot\cogs\profile.py", line 63, in profile
+    bg_path = os.path.join('Assets', 'background', f"{bg_name}.png")
+              ^^
+UnboundLocalError: cannot access local variable 'os' where it is not associated with a value
+2026-01-11 17:52:55,122 | INFO | logging in using static token
+2026-01-11 17:52:56,774 | INFO | Shard ID None has connected to Gateway (Session ID: 7e271a35961ab20c5ad449baf63c8ed2).
+2026-01-11 17:52:58,791 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 18:08:55,674 | INFO | logging in using static token
+2026-01-11 18:08:57,195 | INFO | Shard ID None has connected to Gateway (Session ID: 6654de32ce389071b16cc2d3ffce36b9).
+2026-01-11 18:08:59,214 | INFO | Bot ready as Ditbot#7947 (ID: 1457290076563308670)
+2026-01-11 18:10:56,596 | INFO | [rpg] load_monsters: loaded 30 monsters from D:\dit\Bot\data\monsters.json (size=3423 bytes)
