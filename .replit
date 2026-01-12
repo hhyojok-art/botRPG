@@ -1,1 +1,2 @@
+run = "bash run_repl.sh"
 run = "uvicorn dashboard.app:app --host 0.0.0.0 --port $PORT"

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000'
+// When the frontend is served by the backend (FastAPI) we want requests
+// to go to the same origin. Use a relative base by default and allow
+// an override via `VITE_API_BASE` for dev or proxy setups.
+const API_BASE = import.meta.env.VITE_API_BASE ?? ''
 
 export default function App() {
   const [loading, setLoading] = useState(true)

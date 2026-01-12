@@ -180,6 +180,27 @@ Menjalankan dashboard FastAPI (opsional):
 uvicorn dashboard.app:app --host 0.0.0.0 --port 8000
 ```
 
+## Replit Troubleshooting
+
+Jika Anda mengalami kegagalan deploy di Replit, periksa hal-hal berikut:
+
+- Health checks Replit memanggil `/` secara default. Root sekarang merespons segera tanpa operasi I/O berat.
+- Replit membutuhkan aplikasi membuka port dengan cepat. `run_repl.sh` sekarang menggunakan env `PORT` (jika tersedia) dan mengeksekusi `uvicorn` di foreground.
+- Marker file: saat FastAPI siap, aplikasi menulis file `.uvicorn_bound` di root repo. Anda dapat memeriksa apakah server sudah bind dengan memeriksa file tersebut atau memanggil endpoint `/probe`.
+
+Contoh pemeriksaan lokal (setelah deploy):
+
+```bash
+curl https://<your-replit-url>/probe
+# atau
+curl https://<your-replit-url>/health
+```
+
+- Jika Anda melihat status `not_bound` atau tidak mendapatkan respons dalam waktu singkat, pastikan `PORT` di Replit (jika tersedia) cocok dengan yang digunakan oleh `uvicorn`, dan tidak ada operasi panjang di startup.
+- Untuk deployment stabil, tambahkan secret `TOKEN` di Replit Secrets agar bot berjalan; jika tidak ada `TOKEN`, hanya dashboard yang dijalankan.
+
+Jika masih gagal, bagikan log Replit (console) dan saya bantu analisis lebih lanjut.
+
 Fitur utama:
 - Hybrid commands: slash dan prefix (`!` default)
 - Per-server prefix (SQLite)
